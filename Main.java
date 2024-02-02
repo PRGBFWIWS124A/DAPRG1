@@ -21,10 +21,8 @@ public class Main {
 
     static int getMaxSurroundingColumn(final Coordinate start, final Coordinate end){
         int index = Math.max(start.column(), end.column());
-        if(index > SIZE){
-            return -1;
-        }
-        else if(index == 9){
+
+        if(index == 9){
             return index;
         }
         else {
@@ -34,10 +32,8 @@ public class Main {
 
     static int getMaxSurroundingRow(final Coordinate start, final Coordinate end) {
         int index = Math.max(start.row(), end.row());
-        if(index > SIZE){
-            return -1;
-        }
-        else if(index == 9){
+
+        if(index == 9){
             return index;
         }
         else {
@@ -47,9 +43,8 @@ public class Main {
 
     static int getMinSurroundingColumn(final Coordinate start, final Coordinate end) {
         int index = Math.min(start.column(), end.column());
-        if(index > SIZE){
-            return -1;
-        } else if (index == 0) {
+
+        if (index == 1) {
             return index;
         } else {
             return index--;
@@ -58,10 +53,8 @@ public class Main {
 
     static int getMinSurroundingRow(final Coordinate start, final Coordinate end) {
         int index = Math.min(start.row(), end.row());
-        if(index > SIZE){
-            return -1;
-        }
-        else if (index == 0) {
+
+        if (index == 1) {
             return index;
         }
         else {
@@ -70,9 +63,6 @@ public class Main {
     }
 
     static Coordinate toCoordinate(final String input) {
-        if(input.length()!=2){
-            return null;
-        }
 
         char columnChar = Character.toUpperCase(input.charAt(0));
         int column = columnChar - 'A';
@@ -86,8 +76,13 @@ public class Main {
             return false;
         }
 
-        /* TODO */
+        if(String.valueOf(input.charAt(0)).matches("[A-J]")) {
+            if (String.valueOf(input.charAt(1)).matches("[1-10]")) {
+                return true;
+            }
+        }
 
+        return false;
     }
 
     static String getStartCoordinatePrompt(final int length) {
