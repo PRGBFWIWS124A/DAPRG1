@@ -60,9 +60,7 @@ public class Main {
     }
 
     static Coordinate toCoordinate(final String input) {
-
-        char columnChar = Character.toUpperCase(input.charAt(0));
-        int column = columnChar - 'A';
+        int column =  Character.toUpperCase(input.charAt(0)) - 'A';
         int row = input.charAt(1) - '1';
 
         return new Coordinate(row, column);
@@ -90,6 +88,14 @@ public class Main {
     public static void main(String[] args) {
         test();
     }
+
+
+
+
+
+
+
+    //------------------------------------------------------------------------------------//
 
 
     static void test() {
