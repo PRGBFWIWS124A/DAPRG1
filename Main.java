@@ -67,11 +67,7 @@ public class Main {
     }
 
     static boolean isValidCoordinate(final String input) {
-        if (input.length() != 2) {
-            return false;
-        }
-
-        if (input.toUpperCase().matches("[A-J](10|[1-9)]")) {
+        if (input.toUpperCase().matches("[A-J](10|[1-9)])")) {
             return true;
         }
         return false;
