@@ -25,7 +25,8 @@ public class Main {
         if (index == 9) {
             return index;
         } else {
-            return index++;
+            index++;
+            return index;
         }
     }
 
@@ -35,7 +36,8 @@ public class Main {
         if (index == 9) {
             return index;
         } else {
-            return index++;
+            index++;
+            return index;
         }
     }
 
@@ -45,7 +47,8 @@ public class Main {
         if (index == 1) {
             return index;
         } else {
-            return index--;
+            index--;
+            return index;
         }
     }
 
@@ -55,7 +58,8 @@ public class Main {
         if (index == 1) {
             return index;
         } else {
-            return index--;
+            index--;
+            return index;
         }
     }
 
