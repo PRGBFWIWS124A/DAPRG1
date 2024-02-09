@@ -85,6 +85,79 @@ public class Main {
         return String.format(ENTER_SHIP_COORDINATE_PROMPT, "End", length);
     }
 
+    static void showRowNumber(final int row) {
+        int rowNumber = row + 1;
+        if(String.valueOf(rowNumber).length() == 1) {  //ggf. rowNumber < 10
+            System.out.print(" ");
+        }
+        System.out.print(rowNumber);
+    }
+
+    static String grade(final int points) {
+        String result = "";
+        if(points > 100 || points < 0) {
+        result = "Ungültige Punktzahl";
+        }
+        else if(points <= 100 && points >= 97) {
+            result = "1,0";
+        }
+        else if(points <= 96 && points >= 92) {
+            result = "1,3";
+        } else if (points <= 91 && points >= 89) {
+            result = "1,7";
+        } else if (points <= 88 && points >= 85) {
+            result = "2,0";
+        }
+        //usw...
+
+        return result;
+    }
+
+    static Coordinate getRandomEndCoordinate(final Coordinate start, final int distance) {
+    int direction = Utility.getRandomInt(3); //0 oben, 1 rechts, 2 unten, 3 links
+    int newEndColumn;
+    int newEndRow;
+
+    switch (direction) {
+        case 0:
+            newEndColumn = start.column() - Utility.getRandomInt(distance);
+            break;
+        case 1:
+            newEndRow = start.row() + Utility.getRandomInt(distance);
+            break;
+        case 2:
+            newEndColumn = start.column() + Utility.getRandomInt(distance);
+            break;
+        case 3:
+            newEndRow = start.row() + Utility.getRandomInt(distance);
+    }
+
+ //nochmal neu machen
+        return new Coordinate(0, 0);
+    }
+
+    static void showField(final Field field, final boolean showShips) {
+        if(showShips == true) {
+            System.out.print("O");
+        }
+        else {
+            System.out.print(" ");
+        }
+
+        switch (field) {
+            case FREE:
+                System.out.print(" ");
+                break;
+            case WATER_HIT:
+                System.out.print("X");
+                break;
+            case SHIP_HIT:
+                System.out.print("*");
+                break;
+        }
+    }
+
+
     public static void main(String[] args) {
         test();
     }
