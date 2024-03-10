@@ -96,37 +96,6 @@ public class Main {
         System.out.print(row + 1);
     }
 
-    static String grade(final int points) {
-        String result = "";
-        if (points > 100 || points < 0) {
-            result = "Ungültige Punktzahl";
-        } else if (points <= 100 && points >= 97) {
-            result = "1,0";
-        } else if (points <= 96 && points >= 92) {
-            result = "1,3";
-        } else if (points <= 91 && points >= 89) {
-            result = "1,7";
-        } else if (points <= 88 && points >= 85) {
-            result = "2,0";
-        } else if (points <= 84 && points >= 81) {
-            result = "2,3";
-        } else if (points <= 80 && points >= 77) {
-            result = "2,7";
-        } else if (points <= 76 && points >= 72) {
-            result = "3,0";
-        } else if (points <= 71 && points >= 67) {
-            result = "3,3";
-        } else if (points <= 66 && points >= 59) {
-            result = "3,7";
-        } else if (points <= 58 && points >= 50) {
-            result = "4,0";
-        } else if (points <= 49 && points >= 0) {
-            result = "5,0";
-        }
-
-        return result;
-    }
-
 
     static Coordinate getRandomEndCoordinate(final Coordinate start, final int distance) {
         int choices = 0;
@@ -563,5 +532,36 @@ public class Main {
             }
         }
         return maximum;
+    }
+
+    static String grade(final int points) {
+        String result = "";
+        if (points > 100 || points < 0) {
+            result = "Ungültige Punktzahl";
+        } else if (points <= 100 && points >= 97) {
+            result = "1,0";
+        } else if (points <= 96 && points >= 92) {
+            result = "1,3";
+        } else if (points <= 91 && points >= 89) {
+            result = "1,7";
+        } else if (points <= 88 && points >= 85) {
+            result = "2,0";
+        } else if (points <= 84 && points >= 81) {
+            result = "2,3";
+        } else if (points <= 80 && points >= 77) {
+            result = "2,7";
+        } else if (points <= 76 && points >= 72) {
+            result = "3,0";
+        } else if (points <= 71 && points >= 67) {
+            result = "3,3";
+        } else if (points <= 66 && points >= 59) {
+            result = "3,7";
+        } else if (points <= 58 && points >= 50) {
+            result = "4,0";
+        } else if (points <= 49 && points >= 0) {
+            result = "5,0";
+        }
+
+        return result;
     }
 }
